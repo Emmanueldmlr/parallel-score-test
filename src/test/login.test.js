@@ -1,3 +1,4 @@
+
 import { render, fireEvent } from '@testing-library/react';
 import Login from '../pages/Login';
 
@@ -24,19 +25,12 @@ describe("login describe statement", ()=>{
     const component = render(<Login/>);
     const passwordInputNode = component.getByLabelText("Password")
     expect(passwordInputNode.value).toMatch("")
-    fireEvent.change(passwordInputNode, {target: {value: 'password'}})
+    fireEvent.change(passwordInputNode, {target: {value: ''}})
     expect(passwordInputNode.value).toMatch("")
     const errorMessageNode = component.getByText("Password is required.")
     expect(errorMessageNode).toBeInTheDocument()
-    fireEvent.change(passwordInputNode, {target: {value: 'testing@gmailcom b;'}})
+    fireEvent.change(passwordInputNode, {target: {value: 'testing'}})
     expect(errorMessageNode).not.toBeInTheDocument()
   })
-//   test("should be able to submit form", () => {
-//     const mockFn = jest.fn()
-//     const {getByRole} = render(<FormDetails onSubmit={mockFn}/>)
-//     const buttonNode = getByRole("button")
-//     fireEvent.click(buttonNode)
-//     expect(mockFn).toHaveBeenCalledTimes(1)
 
-//   })
 })
