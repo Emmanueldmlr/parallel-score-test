@@ -1,4 +1,4 @@
-import {validateEmailInput} from './formUtils'
+import {validateEmailInput} from '../utils/formUtils'
 
 describe("validateEmailInput describe statement", ()=>{
   test("validateEmailInput function should pass on correct input", ()=> {
