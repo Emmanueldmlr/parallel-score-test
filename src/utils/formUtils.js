@@ -1,0 +1,1 @@
+export const validateEmailInput = (str="") => str.includes("@")
